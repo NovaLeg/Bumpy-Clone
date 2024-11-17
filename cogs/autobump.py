@@ -18,15 +18,15 @@ class AutoBump(commands.Cog):
     @commands.check(is_nova_user)
     async def autobump_command(self, ctx):
         if self.is_autobump_enabled:
-            await ctx.send("Autobump is currently enabled.")
+            await ctx.send("Autobump is currently enabled now .")
         else:
-            await ctx.send("Autobump is disabled.")
+            await ctx.send("Autobump is disabled now .")
 
     @commands.command(name='autobump_disable')
     @commands.check(is_nova_user)
     async def autobump_disable(self, ctx):
         self.is_autobump_enabled = False
-        await ctx.send("Autobump has been successfully disabled.")
+        await ctx.send("Autobump has been successfully disabled now.")
 
     @tasks.loop(minutes=5)
     async def autobump(self):
