@@ -36,7 +36,7 @@ class Bump(commands.Cog):
         self.db.commit()
         total_bumps = cur.execute("SELECT bumps FROM bumps WHERE guild_id = ?", (guild_id,)).fetchone()[0]
         self.cooldowns[user_id] = current_time
-        bump_msg = await ctx.send(embed=discord.Embed(description=f"Server bumped successfully!\nTotal Bumps of your server: {total_bumps}\nYou can bump again after {90} seconds.", color=0x474A69))
+        bump_msg = await ctx.send(embed=discord.Embed(description=f"Server bumped successfully, bump of this server{total_bumps}.", color=0x474A69))
         await bump_msg.delete(delay=20)
 
     @commands.command(name='topbumps')
